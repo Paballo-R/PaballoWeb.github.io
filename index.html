@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paballo's Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <a href="" class="logo">PABALLO</a>
+            <ul id="sidemenu">
+                <li><a href="#header" class="active">HOME</a></li>
+                <li><a href="#about">ABOUT ME</a></li>
+                <li><a href="#portfolio">MY PORTFOLIO</a></li>
+                <li><a href="#contact">CONTACT ME</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>GRADUATE DEVELOPER</p>
+            <h1>HELLO, MY <span>NAME</span> IS<br>PABALLO MAMPSHIKA</h1>
+        </div>
+    </div>
+</div>   
+<!------------ABOUT ME SECTION--------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/me.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">ABOUT ME</h1>
+                <p>Entry-level software developer knowledgeable in designing and developing web applications. A versatile and 
+                    professional software graduate from IIE Varsity College with a commitment to developing innovative and creative 
+                    software solutions. Proficient in working with C#, Python, HTML, CSS and SQL.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">SKILLS</p>
+                        <p class="tab-links" onclick="opentab('education')">EDUCATION</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Python</span><br>Web scraping</li>
+                            <li><span>C#</span><br>Developing web applications</li>
+                            <li><span>HTML & JavaScript</span><br>Designing & building web apllications</li>
+                            <li><span>MS SQL Server</span><br>Developing web app databases</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2018</span><br>Completed Matric</li>
+                            <li><span>2023</span><br>Graduated with a Diploma in IT Software Development from IIE Varsity College</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------PORTFOLIO SECTION--------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">MY PORTFOLIO</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work1.png">
+                <div class="layer">
+                    <h3>Animated Login Form</h3>
+                    <p>An animated login form with a background image developed with HTML & CSS.</p>
+                    <a href="https://github.com/Paballo-R/AnimatedLoginWithBackground"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work2.png">
+                <div class="layer">
+                    <h3>Medical Equipment Store</h3>
+                    <p>A HTML, CSS & JavaScript project I worked on in my first year of study. An interactive website we developed in our first year of study for an organization of our choice.</p>
+                    <a href="https://github.com/Paballo-R/First-Year-Web-Project"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://github.com/Paballo-R" class="btn">SEE MORE</a>
+    </div>
+</div>
+
+<!------------CONTACT ME SECTION-------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">CONTACT ME</h1>
+                <p><i class='bx bxl-gmail'></i>paballomampshika@gmail.com</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/paballo-mampshika-14b82825a"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://instagram.com/ii_am_pablo?igshid=MjEwN2lyYWYwYw=="><i class='bx bxl-instagram'></i></a>
+                    <a href="https://github.com/Paballo-R"><i class='bx bxl-github'></i></a>
+                </div>
+                <a href="images/PaballoMampshikaResume.pdf" download class="btn btn2">DOWNLOAD CV</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>
